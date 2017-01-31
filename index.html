@@ -44,7 +44,7 @@ var CITY=[
 		var List=React.createClass({
 			render: function(){
 				return <li className="list">
-							<img className="list-image" src={this.props.image} width="200px" height="200px"/>
+							<img className="list-image" src={this.props.image} width="100px" height="100px"/>
 							<div className="list-info">
 							<div className="list-title">{this.props.title}</div>
 							<div className="list-description">{this.props.description}</div>
@@ -53,15 +53,33 @@ var CITY=[
 			}
 		});
 
-
-
 		var PlaceList=React.createClass({
+			getInitialState: function(){
+				return {
+					displayedPlace:CITY
+				};
+			},
+
+			handleSearch: function(event){
+				var searchQuery=event.target.value.toLowerCase();
+				var displayedPlace=CITY.filter(function(el){
+					var searchValue=el.title.toLowerCase();
+					return searchValue.indexOf(searchQuery) !==-1;
+				});
+
+				this.setState({
+					displayedPlace:displayedPlace
+				})
+				
+			},
+
 			render:function(){
 				return(
 						<div className="place">
+							<input className="search-field" type="text" onChange={this.handleSearch}/>
 							<ul className="place-list">
 								{
-									CITY.map(function(el){
+									this.state.displayedPlace.map(function(el){
 										return <List 
 										key={el.id} 
 										title={el.title}
