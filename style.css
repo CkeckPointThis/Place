@@ -1,0 +1,40 @@
+.place{
+	width:300px;
+	margin: auto 0;
+}
+
+.search-field{
+	width:100px;
+	padding: 10px;
+	font-size: 10px;
+}
+
+.place-list{
+	padding: 0;
+	width: 100%;
+}
+
+
+.list{
+	display: flex;
+	align-items:center;
+	font-family: sans-serif;
+	width: 100%;
+	padding: 5px;
+	border-bottom: 1px dotted grey;
+}
+
+.list-image{
+	border-radius: 50%;
+	margin: 5px;
+}
+
+.list-title{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.list-description{
+	font-size: 18px;
+	color: grey;
+}
