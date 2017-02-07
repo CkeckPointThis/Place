@@ -7,17 +7,25 @@
 		<script src="https://fb.me/react-0.14.7.js"></script> 
 		<script src="https://fb.me/react-dom-0.14.7.js"></script> 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.25/browser.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
 </head>
 <body>
 	<div id="content"></div>
-	
+	<button onclick='get()'>Текст</button>
+	<script>
+		$.get('place.json', function(data) {
+		});
+
+	</script>
 
 	<script type="text/babel">
 
-var CITY=[
-{
-      id : 1,
+
+
+var CITY=[]
+/*{      
+		id : 1,
       title : 'Храм-на-Крови',
       description: 'Самый большой храм Екатеринбурга стоит там, где была расстреляна царская семья...',
       image: 'https://www.smileplanet.ru/upload/hl-photo/92e/63b/hram_na_krovi_9.jpg'
@@ -41,10 +49,10 @@ var CITY=[
       image: 'http://lk-magellan.ru/wp-content/uploads/2015/04/plot1.jpg'
    },
 ];
-		var List=React.createClass({
+*/		var List=React.createClass({
 			render: function(){
 				return <li className="list">
-							<img className="list-image" src={this.props.image} width="100px" height="100px"/>
+							<img className="list-image" src="http://addvural.pe.hu/myfolder/images/+"{this.props.image} width="200px" height="200px"/>
 							<div className="list-info">
 							<div className="list-title">{this.props.title}</div>
 							<div className="list-description">{this.props.description}</div>
